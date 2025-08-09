@@ -11,3 +11,4 @@ python-pptx
 langgraph
 pydantic
 psutil
+gunicorn
