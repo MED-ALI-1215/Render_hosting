@@ -1262,8 +1262,9 @@ if __name__ == '__main__':
     print("="*80)
     
     try:
-        app.run(debug=True, host='0.0.0.0', port=5000, threaded=True)
+        port = int(os.environ.get("PORT", 5000))
+        app.run(debug=False, host='0.0.0.0', port=port, threaded=True)
     except Exception as e:
         print(f"❌ Failed to start Flask server: {e}")
-        print("Make sure port 5000 is not in use by another application.")
+        print("Make sure the port is available.")
         print("You can also try running on a different port by changing the port parameter.")
